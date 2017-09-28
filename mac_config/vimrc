@@ -1,0 +1,87 @@
+set nocompatible              " be iMproved, required
+set backspace=2
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'fatih/vim-go'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'solarnz/thrift.vim'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'a.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+syntax on
+set incsearch
+set hlsearch
+set nobackup
+set autoindent
+set ignorecase
+set number
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+set expandtab
+set smarttab
+set cinoptions=g0
+
+" Show tab
+set listchars=tab:>-,trail:-
+
+let mapleader = ","
+
+" Tagbar settings
+let g:tagbar_width=20
+" let g:tagbar_left=1
+
+" Switch header source
+map <leader>h :A<cr>
+
+" CommandT
+map <leader>t :CommandT<cr>
+
+" tabnext
+map <leader>n :tabnext<cr>
+
+" OpenTagbar
+nmap tb :TagbarToggle<cr>
+nmap wm :NERDTreeToggle<cr> :TagbarToggle<cr>
+
+" QuickFix
+nmap cn :cn<cr>
+nmap cp :cp<cr>
+
+" Encoding related
+set encoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb2312,cp936
+set encoding=utf-8
+set termencoding=utf-8,gb2312
+set fencs=utf-8,gb2312
+
+" Switch window quickly
+noremap <C-J>     <C-W>j
+noremap <C-K>     <C-W>k
+noremap <C-H>     <C-W>h
+noremap <C-L>     <C-W>l
